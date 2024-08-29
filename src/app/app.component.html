@@ -1,0 +1,46 @@
+<h1>Super heroes</h1>
+
+<ul>
+  <div [ngClass]="isFirstView ? 'list-view' : 'card-view hero-grid'">
+    <display-hero-component
+      *ngFor="let hero of heroes$ | async"
+      [hero]="hero"
+      [heroesXhr]="this.heroesXhr"
+      [heroFacade]="this.heroFacade"
+      [formGroup]="this.formGroup"
+      [isFirstView]="this.isFirstView"
+      (sendBeingModifiedHero)="setBeingModifiedHero($event)"
+    ></display-hero-component>
+  </div>
+  <button class="Change-view-btn" (click)="setIsFirstView()">
+    Change view
+  </button>
+</ul>
+
+<div class="creation-form" [formGroup]="formGroup">
+  <h2>Hero editor</h2>
+  <div class="field-group">
+    <label>Name</label>
+    <input formControlName="name" type="text" />
+  </div>
+
+  <div class="field-group">
+    <label>Power</label>
+    <input formControlName="power" type="text" />
+  </div>
+
+  <div class="field-group">
+    <label>Image URL</label>
+    <input formControlName="img" type="text" />
+  </div>
+
+  <div>
+    <button
+      [disabled]="!formGroup.valid"
+      [title]="formGroup.valid ? '' : 'The form is invalid'"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </div>
+</div>

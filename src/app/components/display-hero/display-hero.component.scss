@@ -1,0 +1,118 @@
+button {
+  cursor: pointer;
+}
+
+svg {
+  height: 14px;
+  width: 14px;
+  fill: rgba(0, 0, 0, 0.87);
+}
+
+label {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+// list based style
+::ng-deep.list-view {
+  .hero__container {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0 24px;
+    height: 88px;
+  }
+
+  .hero__avatar {
+    max-height: 70px;
+    max-width: 50px;
+    overflow: hidden;
+    border-radius: 2px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .hero__alter-ego,
+  .hero__power {
+    font-size: 11px;
+
+    label {
+      text-align: center;
+    }
+  }
+
+  .hero__actions button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: none;
+    display: inline-block;
+    margin-left: 3px;
+  }
+}
+
+// _____________________________
+
+// card based style
+::ng-deep.card-view {
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 500px;
+  }
+
+  .hero__avatar {
+    max-height: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .hero__content {
+    padding: 16px;
+  }
+
+  .hero__name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .hero__alter-ego,
+  .hero__power {
+    margin-bottom: 16px;
+  }
+
+  .hero__alter-ego label,
+  .hero__power label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .hero__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .hero__actions button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: none;
+    display: inline-block;
+    margin-left: 3px;
+  }
+}
